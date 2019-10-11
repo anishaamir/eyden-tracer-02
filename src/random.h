@@ -8,14 +8,15 @@
 
 namespace DirectGraphicalModels
 {
-	// ================================ Random Namespace ==============================
-	/**
+// ================================ Random Namespace ==============================
+/**
 	* @brief Random number generation
 	* @details This namespace collects methods for generating random numbers and vectors with uniform and normal distributions
 	* @author Sergey G. Kosov, sergey.kosov@project-10.de
 	*/
-	namespace random {
-		/**
+namespace random
+{
+/**
 		* @brief Returns an integer random number with uniform distribution
 		* @details This function produces random integer values \a i, uniformly distributed on the closed interval [\b min, \b max], that is, distributed according to the discrete probability function:
 		* \f[ P(i\,|\,min,max)=\frac{1}{max-min+1}, min \leq i \leq max \f]
@@ -25,14 +26,14 @@ namespace DirectGraphicalModels
 		* @param max The upper boundary of the interval
 		* @returns The random number from interval [\b min, \b max]
 		*/
-		template <typename T>
-		inline T u(T min, T max)
-		{
-			static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
-			std::uniform_int_distribution<T> distribution(min, max);
-			return distribution(generator);
-		}
-		/**
+template <typename T>
+inline T u(T min, T max)
+{
+	static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
+	std::uniform_int_distribution<T> distribution(min, max);
+	return distribution(generator);
+}
+/**
 		* @brief Returns a floating-point random number with uniform distribution
 		* @details This function produces random floating-point values \a i, uniformly distributed on the interval [\b min, \b max), that is, distributed according to the probability function: 
 		* \f[ P(i\,|\,min,max)=\frac{1}{max-min}, min \leq i < max \f] 
@@ -42,14 +43,14 @@ namespace DirectGraphicalModels
 		* @param max The upper boundary of the interval
 		* @return The random number from interval [\b min, \b max)
 		*/
-		template <typename T>
-		inline T U(T min = 0, T max = 1)
-		{
-			static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
-			std::uniform_real_distribution<T> distribution(min, max);
-			return distribution(generator);
-		}
-		/**
+template <typename T>
+inline T U(T min = 0, T max = 1)
+{
+	static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
+	std::uniform_real_distribution<T> distribution(min, max);
+	return distribution(generator);
+}
+/**
 		* @brief Returns a floating-point random number with normal distribution
 		* @details This function generates random numbers according to the <a href="https://en.wikipedia.org/wiki/Normal_distribution">Normal (or Gaussian) random number distribution</a>:
 		* \f[ f(x\,;\,\mu,\sigma)=\frac{1}{\sqrt{2\sigma^2\pi}} exp{\frac{-(x-\mu)^2}{2\sigma^2}} \f]
@@ -59,16 +60,14 @@ namespace DirectGraphicalModels
 		* @param sigma The <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> \f$\sigma\f$
 		* @return A floating point number with normal distribution
 		*/
-		template <typename T>
-		inline T N(T mu = 0, T sigma = 1)
-		{
-			static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
-			std::normal_distribution<T> distribution(mu, sigma);
-			return distribution(generator);
-		}
-
-
-		/**
+template <typename T>
+inline T N(T mu = 0, T sigma = 1)
+{
+	static thread_local std::mt19937 generator(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
+	std::normal_distribution<T> distribution(mu, sigma);
+	return distribution(generator);
+}
+/**
 		* @brief Returns a matrix of floating-point random numbers with uniform distribution
 		* @param size Size of the resulting matrix
 		* @param type Type of the resulting matrix
@@ -76,14 +75,14 @@ namespace DirectGraphicalModels
 		* @param max The upper boundary
 		* @return A matrix of floating-point numbers in range between [\b min and \b max)
 		*/
-		inline Mat U(cv::Size size, int type, double min = 0, double max = 1)
-		{
-			static thread_local RNG rng(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
-			Mat res(size, type);
-			rng.fill(res, RNG::UNIFORM, min, max);
-			return res;
-		}
-		/**
+inline Mat U(cv::Size size, int type, double min = 0, double max = 1)
+{
+	static thread_local RNG rng(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
+	Mat res(size, type);
+	rng.fill(res, RNG::UNIFORM, min, max);
+	return res;
+}
+/**
 		* @brief Returns a matrix of floating-point random numbers with normal distribution
 		* @param size Size of the resulting matrix
 		* @param type Type of the resulting matrix
@@ -91,14 +90,13 @@ namespace DirectGraphicalModels
 		* @param sigma The standard deviation \f$\sigma\f$
 		* @return A matrix of floating-point numbers with normal distribution
 		*/
-		inline Mat N(cv::Size size, int type, double mu = 0, double sigma = 1)
-		{
-			static thread_local RNG rng(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
-			Mat res(size, type);
-			rng.fill(res, RNG::NORMAL, mu, sigma);
-			return res;
-		}
-
-	}
+inline Mat N(cv::Size size, int type, double mu = 0, double sigma = 1)
+{
+	static thread_local RNG rng(static_cast<unsigned int>(clock() + std::hash<std::thread::id>()(std::this_thread::get_id())));
+	Mat res(size, type);
+	rng.fill(res, RNG::NORMAL, mu, sigma);
+	return res;
 }
 
+} // namespace random
+} // namespace DirectGraphicalModels

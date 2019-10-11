@@ -20,22 +20,18 @@ public:
 	 * @param p3 The fourth point defining the quadrangular shape of the light source
 	 */
 	CLightArea(Vec3f intensity, Vec3f p0, Vec3f p1, Vec3f p2, Vec3f p3)
-		: m_intensity(intensity)
-		, m_p0(p0)
-		, m_e1(p1 - p0)
-		, m_e2(p3 - p0)
-	{ 
+		: m_intensity(intensity), m_p0(p0), m_e1(p1 - p0), m_e2(p3 - p0)
+	{
 		// --- PUT YOUR CODE HERE ---
-	}  
+	}
 
-	virtual std::optional<Vec3f> Illuminate(Ray& ray) override
+	virtual std::optional<Vec3f> Illuminate(Ray &ray) override
 	{
 		// --- PUT YOUR CODE HERE ---
 		return Vec3f();
 	}
 
-	Vec3f GetNormal(const Vec3f& position) const { return m_normal; }
-
+	Vec3f GetNormal(const Vec3f &position) const { return m_normal; }
 
 private:
 	Vec3f m_intensity;
