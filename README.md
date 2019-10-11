@@ -5,7 +5,7 @@
 #            https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-generating-camera-rays
 #            https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection
 
- Disclaimer : Group work with Keshav Kumar & Ayesha Naeem
+
 ## Problem 2.2
 ### Encapsulate camera and primitives from main application logic (Points 5)
 1. Fork the current repository
@@ -89,3 +89,5 @@ As you have learned in the last exercise, shadows can add important visual infor
 If everything is implemented correct your images should look like this:
 
 ![Area Light](./doc/area_light.jpg)
+
+ Disclaimer : Group work with Keshav Kumar & Ayesha Naeem
