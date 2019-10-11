@@ -1,10 +1,11 @@
 # Practical Assignment 2
 **Name**: Zohair Ajmal & Anisha Amir 
 # Reference : https://www.scratchapixel.com/lessons/3d-basic-rendering/introduction-to-shading
-            https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle
-            https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-generating-camera-rays
-            https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection
-# Disclaimer : Group work with Keshav Kumar & Ayesha Naeem
+#            https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-rendering-a-triangle
+#            https://www.scratchapixel.com/lessons/3d-basic-rendering/ray-tracing-generating-camera-rays
+#            https://www.scratchapixel.com/lessons/3d-basic-rendering/minimal-ray-tracer-rendering-simple-shapes/ray-plane-and-ray-disk-intersection
+
+ Disclaimer : Group work with Keshav Kumar & Ayesha Naeem
 ## Problem 2.2
 ### Encapsulate camera and primitives from main application logic (Points 5)
 1. Fork the current repository
